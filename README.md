@@ -18,7 +18,7 @@ Welcome to the Hangman Game Project! This game is a modern take on the classic w
 - **CSS3**: Styled the game's interface for a visually appealing experience.
 - **JavaScript (ES6+)**: Implemented game logic and API calls.
 - **jQuery**: Used for DOM manipulation, handling events, and performing animations.
-- **APIs**: Integrated with the `random-word-api` for fetching random words based on the selected language.
+- **APIs**: Integrated with the `random-word-api` for fetching random words based on the selected language. (some word don't exist in the language's dictionary, i'll change the API someday)
 
 ## Accessibility
 
