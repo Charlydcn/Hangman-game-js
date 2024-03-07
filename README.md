@@ -28,20 +28,6 @@ Accessibility is a core component of this game. The following features have been
 - **Visual Feedback**: Provides visual cues for correct and incorrect guesses, as well as the progress on the hangman drawing.
 - **Error Handling**: Displays informative error messages and feedback for an improved user experience.
 
-## Getting Started
-
-To play the game, simply clone this repository and open `index.html` in your favorite browser:
-
-```bash
-git clone https://github.com/yourusername/hangman-game.git
-cd hangman-game
-open index.html
-```
-
 ## Contribution
 
 Contributions are welcome! Whether it's adding new features, improving the game's accessibility, or fixing bugs, feel free to fork this repository and submit a pull request.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE) file for details.
