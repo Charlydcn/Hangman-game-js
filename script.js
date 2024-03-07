@@ -293,10 +293,3 @@ function displayGamesHistory() {
         modalBody.append(entryContent);
     });
 }
-
-setInterval(function() {
-    console.log(gameRunning);
-}, 2000); // 2000 millisecondes = 2 secondes
-
-
-
