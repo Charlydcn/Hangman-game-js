@@ -38,23 +38,31 @@ async function generateRandomWord() {
 // ------- opening et closing of match history (jQuery for animations) ------------------------------------------------
 $('#game-history-btn').click(function() {
     if ($('#modal-overlay').css('display') === 'none') {
-        $('#modal-body').empty()
-        displayGamesHistory()
-        $('#modal-overlay').fadeIn('fast')
+        $('#modal-body').empty();
+        displayGamesHistory();
+        $('#modal-overlay').fadeIn('fast');
+        $('body').addClass('no-scroll'); // Empêche le défilement
     } else {
-        $('#modal-overlay').fadeOut('fast')
+        $('#modal-overlay').fadeOut('fast', function() {
+            $('body').removeClass('no-scroll'); // Réactive le défilement
+        });
     }
-})
+});
 
 $('#modal-close').click(function() {
-    $('#modal-overlay').fadeOut();
-})
+    $('#modal-overlay').fadeOut(function() {
+        $('body').removeClass('no-scroll'); // Réactive le défilement
+    });
+});
 
 $(document).click(function(event) {
     if (!$(event.target).closest('#modal-content, #game-history-btn').length) {
-        $('#modal-overlay').fadeOut()
+        $('#modal-overlay').fadeOut(function() {
+            $('body').removeClass('no-scroll'); // Réactive le défilement
+        });
     }
-})
+});
+
 // --------------------------------------------------------------------------------------------------------------------
 
 // language selection on select list
@@ -278,9 +286,20 @@ function handleErrors() {
     }
 }
 
+// only portion of the code done with GPT (to achieve the project in 7h max)
 function displayGamesHistory() {
     const gamesHistory = JSON.parse(localStorage.getItem('gamesHistory')) || [];
     const modalBody = $('#modal-body');
+    const totalGames = gamesHistory.length;
+    const totalWins = gamesHistory.filter(game => game.gameWon).length;
+    const winRate = totalGames > 0 ? ((totalWins / totalGames) * 100).toFixed(2) : 0;
+
+    modalBody.empty();
+
+    $('#modal-content h2').text('Match History');
+
+    const winRateTitle = $('<h3>').text(`Win Rate: ${winRate}% - Total Games: ${totalGames}`);
+    winRateTitle.insertAfter('#modal-content h2');
 
     gamesHistory.forEach((game, index) => {
         const entryClass = game.gameWon ? 'win' : 'lose';
