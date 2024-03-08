@@ -5,6 +5,10 @@
 
 Welcome to the Hangman Game Project! This game is a modern take on the classic word guessing game. Designed to be both fun and educational, it challenges players to guess words correctly before the hangman is drawn.
 
+Test (on desktop for now) the project here : https://hangman-game-js-three.vercel.app/
+<br>
+(it's extremely difficult for now, the word generation API will be changed in the future)
+
 ## Features
 
 - **Dynamic Word Generation**: Utilizes an API to fetch random words, allowing for a diverse and challenging experience with each game.
